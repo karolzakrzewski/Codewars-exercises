@@ -4,16 +4,16 @@ num = randint(1,1000)
 
 def persistence(num):
     numx = num
-    cykle = 0
+    cycles = 0
     while len(str(numx)) > 1:
-        cyfry = []
+        digits = []
         for n in str(numx):
-            cyfry.append(n)
+            digits.append(n)
         numx = 1    
         for c in cyfry:
             numx *= int(c)
-        cykle += 1
-    return cykle
+        cycles += 1
+    return cycles
     
-print('Wygenerowano liczbę: ',num)
-print('Liczba cykli: ',persistence(num))
+print('Generated number: ',num)
+print('Number of cycles: ',persistence(num))
