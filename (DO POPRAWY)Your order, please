@@ -1,0 +1,16 @@
+import string
+
+text = 'a2 bij5e patry3k ma1ma m4nie ratu6j 7mnie'
+
+def sort_text(text):
+    order = []
+    for t in text.split(' '):
+        order.append('_')
+    for t in text.split(' '):
+        for e in t:
+            if e in string.digits:
+                t = order[int(e-1)]
+        # order.append(t)
+    return order
+
+print(sort_text(text))
