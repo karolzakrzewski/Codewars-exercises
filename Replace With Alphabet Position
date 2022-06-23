@@ -1,0 +1,11 @@
+import string
+
+text = 'we are family!'
+
+def find_position(text):
+    indexes = [] 
+    for t in text:
+        if t.lower() in string.ascii_lowercase: 
+            indexes.append(str(string.ascii_lowercase.index(t) + 1)) 
+    return ' '.join(indexes)
+print(find_position(text))
