@@ -11,7 +11,7 @@ def findNb(m):
             break
         if sum > m:
             n = -1
-			break
+	    	break
     return n
 
 print(findNb(m))
