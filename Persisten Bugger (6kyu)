@@ -1,0 +1,19 @@
+from random import randint
+
+num = randint(1,1000)
+
+def persistence(num):
+    numx = num
+    cykle = 0
+    while len(str(numx)) > 1:
+        cyfry = []
+        for n in str(numx):
+            cyfry.append(n)
+        numx = 1    
+        for c in cyfry:
+            numx *= int(c)
+        cykle += 1
+    return cykle
+    
+print('Wygenerowano liczbę: ',num)
+print('Liczba cykli: ',persistence(num))
