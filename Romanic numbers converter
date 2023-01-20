@@ -1,0 +1,13 @@
+def solution(romanic):
+    dict = {"M":1000, "D":500, "C":100, "L":50, "X":10, "V":5, "I":1} #słownik na znaki rzymskie
+    number = 0                             #deklaracja liczby arabskiej
+    prev_num = 0                           #deklaracja liczby poprzedniej
+    for i in romanic:                      #pętla na przejscie po kazdym rzymskim znaku
+        number += dict[i]                  #dodanie do liczby arabskiej wartosci przypisanej danemu znakowi rzymskiemu
+        if dict[i] > prev_num:             # warunek na wartosci wieksze niz poprzednia liczba
+            number = number - 2*(prev_num) #jesli spelniony trzeba odjac 2krotność poprzedniej liczny
+        prev_num=dict[i]                   #aktualizacja poprzeniej liczby
+    return number
+
+romanic = input('Podaj liczbę w zapisie rzymskim: \n')
+print(solution(romanic))
