@@ -1,3 +1,5 @@
+# Pierwszy program konwertuje rzymskie na arabskie:
+
 def solution(romanic):
     dict = {"M":1000, "D":500, "C":100, "L":50, "X":10, "V":5, "I":1} #słownik na znaki rzymskie
     number = 0                             #deklaracja liczby arabskiej
@@ -11,3 +13,29 @@ def solution(romanic):
 
 romanic = input('Podaj liczbę w zapisie rzymskim: \n')
 print(solution(romanic))
+
+# Drugi program konwertuje arabskie na rzymskie:
+
+def solution(arab):            
+    dict = {1000:'M',                                  # słownik na przypisanie każdej potrzebnej sprawdzanej liczbie z arabskiego do rzymskiego
+            900: 'CM',
+            500: 'D',
+            400: 'CD',
+            100: 'C',
+            90: 'XC',
+            50: 'L',
+            40: 'XL',
+            10: 'X',
+            9: 'IX',
+            5: 'V',
+            4: 'IV',
+            1: 'I'}
+    roman = ''                                        # deklaracja stringa na dodawanie liter do zapisu rzymskiego
+    for key in sorted(dict.keys(),reverse = True):    # pętla która przechodzi po kazdym kluczu ze slownika, który jest posortowany od najw. do najmn.
+        while arab >= key:                            # kolejna pętla, która będzie działać jeśli liczba którą chcemy przekształcić jest większa lub równa kluczowi na kótrym jest obecnia pętla
+            roman += dict[key]                        # dodanie litery z klucza do wyjsciowego stringa z liczbą rzymską  
+            arab -= key                               # odjęcie liczby reprezentowanej przez dany znak rzymski od wejsciowej liczby arabskiej 
+    return roman
+
+arab = int(input('Podaj arabską liczbę od 1 do 3999: \n'))
+print(solution(arab))
